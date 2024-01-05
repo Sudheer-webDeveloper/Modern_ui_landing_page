@@ -1,0 +1,1267 @@
+@import "./index.scss";
+
+@mixin flexer($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin button {
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  padding: 10px 5px;
+  background: rgba(255, 53, 53, 0.859);
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+}
+//Navbar.jsx
+
+.navbar {
+  width: 100%;
+  @include flexer(row);
+  justify-content: space-between;
+  font-family: $font-alt;
+  padding: 5px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.877);
+  background-image: linear-gradient(135deg, #ce9ffc 10%, #867bffea 90%);
+
+  box-shadow: 0 0 10px #867bffea;
+
+  color: white;
+  font-family: $font-alt;
+  @include SMmobile {
+    padding: 2px 20px;
+  }
+  .app-logo {
+    @include flexer(row);
+    gap: 10px;
+    img {
+      width: 80px;
+      filter: brightness(150%);
+      height: 60px;
+    }
+    @include SMmobile {
+      height: 50px;
+    }
+  }
+  .app-links {
+    @include flexer(row);
+    gap: 20px;
+
+    li {
+      font-size: 1.2rem;
+      font-weight: 600;
+      list-style: none;
+    }
+    li:hover {
+      color: rgb(103, 102, 102);
+      padding-bottom: 5px;
+    }
+    @include Amobile {
+      display: none;
+    }
+  }
+
+  .register {
+    @include flexer(row);
+    gap: 10px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    @include Fmobile {
+      display: none;
+    }
+    a:hover {
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+    .circle {
+      position: relative;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      span {
+        position: absolute;
+        top: -5px;
+        right: -9px;
+        font-size: 13px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgb(241, 6, 6);
+
+        @include flexer(row);
+        color: white;
+      }
+    }
+    div {
+      height: 20px;
+      width: 2px;
+    }
+  }
+
+  .app-hamburger {
+    font-size: 1.5rem;
+    display: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+    @include Fmobile {
+      font-size: 1.3rem;
+    }
+    @include Bmobile {
+      font-size: 1.2rem;
+    }
+
+    .app-overlay {
+      position: fixed;
+      @include flexer(column);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000000e5;
+      z-index: 5;
+
+      .app-cross {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        h6 {
+          font-size: 2.5rem;
+          cursor: pointer;
+          @include Bmobile {
+            font-size: 2rem;
+          }
+        }
+      }
+      .app-small-screen-links {
+        @include flexer(column);
+        gap: 20px;
+        li {
+          list-style: none;
+          cursor: pointer;
+          font-size: 2rem;
+          @include Bmobile {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    @include Amobile {
+      @include flexer(column);
+    }
+  }
+}
+
+// Hero .jsx
+main {
+  background-image: linear-gradient(135deg, #ce9ffc 10%, #7367f0 100%);
+}
+.hero {
+  width: 95vw;
+  height: 80vh;
+  margin: auto;
+  //   margin-top: 10px;
+  @include flexer(column);
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 10vw;
+  background: radial-gradient(#53cac0, #65cfc3);
+  background-image: linear-gradient(135deg, #52e5e7 10%, #120cb7cb 100%);
+  font-family: $font-alt;
+  background-image: linear-gradient(135deg, #abdcff 10%, #0396ff 100%);
+  background-image: linear-gradient(135deg, #ce9ffc 10%, #7367f0 100%);
+  padding-top: 10vh;
+  overflow: hidden;
+  border-radius: 20px;
+  gap: 20px;
+  position: relative;
+  z-index: 100;
+
+  @include Nmobile {
+    padding-left: 5vw;
+    padding-top: 5vh;
+  }
+  @include Fmobile {
+    gap: 30px;
+  }
+  @include SMmobile {
+    padding-left: 2vw;
+    height: 60vh;
+  }
+  @include Smobile {
+    gap: 20px;
+  }
+  @include Smobile {
+    height: 60vh;
+    padding-left: 20px;
+    // filter: drop-shadow(5px 5px 0px rgba(23, 23, 23, 0.221));
+  }
+
+  .hero-content {
+    width: 100%;
+    @include flexer(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include Fmobile {
+      gap: 30px;
+    }
+    @include Smobile {
+      gap: 10px;
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 400;
+      text-transform: capitalize;
+      @include mobile {
+        font-size: 1.8rem;
+      }
+      @include Fmobile {
+        font-size: 1.5rem;
+      }
+    }
+    h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      @include mobile {
+        font-size: 3.5rem;
+      }
+      @include Fmobile {
+        font-size: 3rem;
+      }
+      @include SMmobile {
+        font-size: 2.5rem;
+      }
+    }
+    .heading {
+      @include flexer(row);
+      h1:nth-child(1) {
+        font-weight: 1000;
+        font-size: 11rem;
+        color: rgb(255, 255, 255);
+        z-index: 0;
+        @include Zmobile {
+          font-size: 10rem;
+        }
+        @media (max-width: 1150px) {
+          font-size: 9rem;
+        }
+        @include Amobile {
+          font-size: 7rem;
+        }
+        @include mobile {
+          font-size: 6rem;
+        }
+        @include Fmobile {
+          font-size: 5rem;
+        }
+        @include Bmobile {
+          font-size: 4rem;
+        }
+        @include SMmobile {
+          font-size: 3rem;
+        }
+        @include Smobile {
+          color: rgba(255, 255, 255, 0.573);
+        }
+      }
+      h1:nth-child(2) {
+        font-weight: 1000;
+        font-size: 11rem;
+        color: rgb(255, 255, 255);
+        z-index: 5;
+        @include Zmobile {
+          font-size: 10rem;
+        }
+        @media (max-width: 1150px) {
+          font-size: 8.5rem;
+        }
+        @include Amobile {
+          font-size: 7rem;
+        }
+        @include mobile {
+          font-size: 6rem;
+        }
+        @include Fmobile {
+          font-size: 5rem;
+        }
+        @include Bmobile {
+          font-size: 4rem;
+        }
+        @include SMmobile {
+          font-size: 3rem;
+        }
+        @include Smobile {
+          color: rgba(255, 255, 255, 0.573);
+        }
+      }
+    }
+
+    button {
+      width: 200px;
+      @include button;
+      background: #fb2b4a;
+      @include Fmobile {
+        width: 130px;
+        font-size: 0.8rem;
+      }
+      @include SMmobile {
+        width: 120px;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .hero-discription {
+    @include flexer(column);
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 25vw;
+    gap: 10px;
+    margin-right: 9vh;
+    @include Amobile {
+      margin-top: 10vh;
+    }
+    @include mobile {
+      margin-top: 15vh;
+    }
+    @include Fmobile {
+      width: 30vw;
+      margin-top: 10vh;
+      margin-right: 5vh;
+    }
+    @include SMmobile {
+      margin-top: 2vh;
+      width: 80vw;
+    }
+    @include Smobile {
+      width: 80vw;
+      margin-top: 10vh;
+
+      //   z-index: 100;
+    }
+    h4 {
+      font-size: 2rem;
+      font-weight: 700;
+      width: 100%;
+      text-align: right;
+      @include Amobile {
+        font-size: 1.5rem;
+      }
+      @include SMmobile {
+        text-align: left;
+      }
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      text-align: right;
+      color: rgb(255, 255, 255);
+      @include Amobile {
+        font-size: 0.8rem;
+      }
+      @include SMmobile {
+        text-align: left;
+      }
+    }
+  }
+
+  .hero-image {
+    position: absolute;
+    top: -2vh;
+    left: 29vw;
+    z-index: 2;
+    @include mobile {
+      top: -2vh;
+      left: 20vw;
+    }
+    @include Fmobile {
+      top: -2vh;
+      left: 27vw;
+    }
+    @include Bmobile {
+      top: -1vh;
+      left: 30vw;
+    }
+    @include SMmobile {
+      top: 2vh;
+      left: 26vw;
+    }
+    @include Smobile {
+      top: 5vh;
+      left: 27vw;
+    }
+
+    img {
+      width: 40vw;
+      height: 80vh;
+      transform: rotate3d(1, 2, 3, 2deg);
+      filter: brightness(120%);
+      filter: drop-shadow(15px 15px 0px rgba(23, 23, 23, 0.221));
+
+      @include mobile {
+        width: 50vw;
+        height: 75vh;
+      }
+
+      @include Fmobile {
+        width: 50vw;
+        height: 60vh;
+      }
+      @include Bmobile {
+        width: 70vw;
+        height: 60vh;
+      }
+      @include SMmobile {
+        width: 75vw;
+        height: 50vh;
+        filter: drop-shadow(5px 5px 0px rgba(23, 23, 23, 0.221));
+      }
+      @include Smobile {
+        width: 90vw;
+        height: 50vh;
+        filter: drop-shadow(5px 5px 0px rgba(23, 23, 23, 0.221));
+      }
+    }
+  }
+}
+
+//products.jsx
+
+.products {
+  width: 80vw;
+  margin: auto;
+  padding-top: 10vh;
+  @include flexer(column);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  @include Gmobile {
+    width: 95vw;
+  }
+  .flex-1 {
+    @include flexer(row);
+    width: 100%;
+    gap: 15px;
+    flex-wrap: wrap;
+    img:nth-child(1) {
+      width: 20vw;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        width: 45vw;
+        height: 35vh;
+      }
+      @include SMmobile {
+        width: 45vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+    img:nth-child(2) {
+      width: 20vw;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        width: 45vw;
+        height: 35vh;
+      }
+      @include SMmobile {
+        width: 45vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+    img:nth-child(3) {
+      flex: 1;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        height: 38vh;
+      }
+      @include SMmobile {
+        width: 80vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+  }
+  .flex-2 {
+    @include flexer(row);
+    width: 100%;
+    gap: 15px;
+    flex-wrap: wrap;
+    img:nth-child(3) {
+      width: 20vw;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        width: 45vw;
+        height: 35vh;
+      }
+      @include SMmobile {
+        width: 45vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+    img:nth-child(2) {
+      width: 20vw;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        width: 45vw;
+        height: 35vh;
+      }
+      @include SMmobile {
+        width: 45vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+    img:nth-child(1) {
+      flex: 1;
+      height: 35vh;
+      border-radius: 20px;
+      @include Amobile {
+        height: 38vh;
+      }
+      @include SMmobile {
+        width: 80vw;
+        height: 28vh;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.shipping {
+  margin-top: 20px;
+  @include flexer(row);
+  gap: 20px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: $font-alt;
+  flex-wrap: wrap;
+
+  .ship-icon {
+    @include flexer(row);
+    justify-content: flex-start;
+    gap: 20px;
+    h2 {
+      color: rgb(255, 69, 69);
+      font-size: 3rem;
+      padding-top: 10px;
+      @include Bmobile {
+        font-size: 2rem;
+        padding-top: 10px;
+      }
+    }
+
+    .ship-content {
+      h3 {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: black;
+        @include Bmobile {
+          font-size: 1rem;
+        }
+      }
+      p {
+        color: #929090;
+        font-size: 1rem;
+        font-weight: 600;
+        @include Bmobile {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+// banner.jsx
+
+.banner {
+  margin: auto;
+  margin-bottom: 200px;
+  margin-top: 15vh;
+  width: 95vw;
+  border-radius: 20px;
+  background: #faeed1;
+  background-image: linear-gradient(135deg, #e01f29e0 10%, #9808ccaa 100%);
+  @include flexer(row);
+  justify-content: space-between;
+  padding: 50px 80px;
+  position: relative;
+  @include Amobile {
+    padding: 50px 20px;
+  }
+  @include mobile {
+    padding: 40px 10px;
+  }
+  @include Bmobile {
+    padding: 30px 10px;
+  }
+  @include SMmobile {
+    padding: 20px 10px;
+    margin-bottom: 140px;
+  }
+  @include Smobile {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-bottom: 100px;
+  }
+  .banner-content-1 {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-alt;
+    gap: 10px;
+    color: white;
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 500;
+      @include mobile {
+        font-size: 0.9rem;
+      }
+      @include Bmobile {
+        font-size: 0.8rem;
+      }
+      @include SMmobile {
+        font-size: 0.7rem;
+      }
+      @include Smobile {
+        font-size: 0.7rem;
+      }
+    }
+    h2 {
+      font-size: 5rem;
+      font-weight: 1000;
+      @include mobile {
+        font-size: 3.5rem;
+      }
+      @include Bmobile {
+        font-size: 3rem;
+      }
+      @include SMmobile {
+        font-size: 2rem;
+      }
+      @include SMmobile {
+        font-size: 1.6rem;
+      }
+    }
+
+    h2:nth-child(2) {
+      margin-bottom: -45px;
+      @include Bmobile {
+        margin-bottom: -30px;
+      }
+      @include SMmobile {
+        margin-bottom: -20px;
+      }
+      @include Smobile {
+        margin-bottom: -15px;
+      }
+    }
+  }
+
+  .banner-content-2 {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-alt;
+    color: white;
+    gap: 20px;
+    @include mobile {
+      margin-left: 80px;
+      @include Bmobile {
+        margin-left: 50px;
+        gap: 10px;
+      }
+      @include SMmobile {
+        margin-left: 40px;
+      }
+      @include Smobile {
+        margin-left: 35px;
+      }
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      @include mobile {
+        font-size: 1.1rem;
+        @include Bmobile {
+          font-size: 1rem;
+        }
+        @include Bmobile {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      @include mobile {
+        font-size: 2.5rem;
+      }
+      @include Bmobile {
+        font-size: 2rem;
+      }
+      @include SMmobile {
+        font-size: 1.5rem;
+      }
+      @include Smobile {
+        font-size: 1.3rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      width: 300px;
+      font-weight: 500;
+      @include mobile {
+        font-size: 0.9rem;
+      }
+
+      @include Bmobile {
+        font-size: 0.8rem;
+        width: 270px;
+      }
+      @include Bmobile {
+        font-size: 0.7rem;
+        width: 250px;
+      }
+      @include Bmobile {
+        font-size: 0.68rem;
+        width: 250px;
+      }
+    }
+    button {
+      margin-top: 10px;
+      @include button;
+      background: white;
+      color: rgb(219, 40, 216);
+      width: 100px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      @include mobile {
+        width: 90px;
+        padding: 5px;
+        font-size: 1rem;
+      }
+      @include Bmobile {
+        width: 70px;
+        padding: 5px;
+        font-size: 0.7rem;
+      }
+      @include Smobile {
+      }
+    }
+  }
+  .banner-image {
+    position: absolute;
+    top: -17vh;
+    left: 10vw;
+    @include mobile {
+      top: -9vh;
+      left: 10vw;
+    }
+    @include Bmobile {
+      top: -9vh;
+      left: 10vw;
+    }
+    @include Bmobile {
+      top: -10vh;
+      left: 5vw;
+    }
+    @include Smobile {
+      top: -8vh;
+      left: -2.5vw;
+    }
+    img {
+      width: 45vw;
+      filter: drop-shadow(10px 10px 0px rgba(23, 23, 23, 0.221));
+      @include Amobile {
+        width: 50vw;
+      }
+      @include Smobile {
+        filter: drop-shadow(6px 6px 0px rgba(23, 23, 23, 0.221));
+        width: 55vw;
+      }
+    }
+  }
+}
+
+.banner1 {
+  background-image: linear-gradient(135deg, #fec163 10%, #de4313 100%);
+  position: relative;
+
+  .banner-content-2 {
+    button {
+      color: rgb(255, 153, 0);
+    }
+  }
+  .banner-image {
+    position: absolute;
+    top: -15vh;
+    left: 10vw;
+    @include mobile {
+      top: -7vh;
+      left: 8vw;
+    }
+    @include Fmobile {
+      top: -7vh;
+      left: 8vw;
+    }
+    @include Bmobile {
+      top: -7vh;
+      left: 9vw;
+    }
+    @include SMmobile {
+      top: -5vh;
+      left: 10vw;
+    }
+
+    @include Smobile {
+      top: -4vh;
+      left: 11vw;
+    }
+    img {
+      width: 15vw;
+      filter: drop-shadow(10px 10px 0px rgba(23, 23, 23, 0.221));
+      @include Amobile {
+        width: 20vw;
+      }
+      @include Smobile {
+        filter: drop-shadow(6px 6px 0px rgba(23, 23, 23, 0.221));
+        width: 23vw;
+      }
+    }
+  }
+}
+
+// items.jsx
+
+.items {
+  @include flexer(row);
+  gap: 5px;
+  width: 90vw;
+  margin: auto;
+  min-height: 85vh;
+  margin-bottom: 200px;
+  align-items: flex-start;
+  font-family: $font-alt;
+  @include Zmobile {
+    flex-wrap: wrap;
+  }
+  .item-image {
+    max-width: 25vw;
+    @include Amobile {
+      min-width: 80vw;
+    }
+    img {
+      width: 25vw;
+      height: 92vh;
+      object-fit: cover;
+      border-radius: 20px;
+      @include Amobile {
+        min-width: 80vw;
+        max-height: 50vh;
+        background-position: top 10%;
+      }
+    }
+  }
+  .second-items {
+    @include flexer(row);
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 5px;
+    @include Amobile {
+      gap: 20px;
+      width: 90vw;
+      flex-wrap: wrap;
+    }
+    @include Bmobile {
+      gap: 40px;
+    }
+    .item {
+      width: 20vw;
+
+      @include Amobile {
+        min-width: 30vw;
+      }
+      @include mobile {
+        min-width: 35vw;
+      }
+      img {
+        width: 15vw;
+        height: 25vh;
+        box-shadow: 0 0 3px rgba(16, 16, 16, 0.833);
+
+        border-radius: 20px;
+        object-fit: contain;
+        padding: 20px;
+        @include Zmobile {
+          width: 17vw;
+        }
+        @include Amobile {
+          width: 22vw;
+          height: 50vh;
+        }
+        @include Amobile {
+          width: 30vw;
+          height: 25vh;
+        }
+        @include Bmobile {
+          width: 35vw;
+          height: 25vh;
+        }
+        @include Smobile {
+          width: 35vw;
+          height: 20vh;
+          border-radius: 10px;
+        }
+      }
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-left: 5px;
+        margin-top: 5px;
+        height: 25px;
+        overflow: hidden;
+        @include AMmobile {
+          font-size: 1rem;
+        }
+      }
+      h4 {
+        color: #747474;
+        font-size: 1.2rem;
+        margin-left: 5px;
+        margin-top: 5px;
+        @include AMmobile {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// status .jsx
+
+.status {
+  @include flexer(row);
+  justify-content: space-between;
+  overflow: hidden;
+  font-family: $font-alt;
+  background: rgba(255, 124, 112, 0.581);
+  background-image: linear-gradient(135deg, #abdcff 10%, #0396ff 100%);
+  background: rgba(24, 24, 24, 0.418);
+  margin-top: 20vh;
+
+  padding: 20px 5px;
+  margin-bottom: 20vh;
+  .stat-1 {
+    @include flexer(row);
+    gap: 5vw;
+    @include Zmobile {
+      gap: 1vw;
+    }
+    @include mobile {
+    }
+    .div {
+      width: 2px;
+      height: 100px;
+      background: rgb(235, 235, 235);
+      @include mobile {
+        width: 1.5px;
+        height: 90px;
+      }
+      @include SMmobile {
+        height: 45px;
+      }
+    }
+    .content {
+      @include flexer(column);
+      width: 30vw;
+      gap: 10px;
+      @include Amobile {
+        font-size: 1.2rem;
+      }
+      @include SMmobile {
+        width: 32vw;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: bisque;
+        @include Amobile {
+          font-size: 1.5rem;
+        }
+        @include Amobile {
+          font-size: 1.2rem;
+        }
+        @include SMmobile {
+          font-size: 1rem;
+        }
+      }
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+        @include Zmobile {
+          font-size: 1.4rem;
+        }
+        @include Amobile {
+          font-size: 0.9rem;
+        }
+        @include Fmobile {
+          font-size: 0.7rem;
+        }
+        @include SMmobile {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// card\\\
+
+.card {
+  width: 90vw;
+  margin: auto;
+  font-family: $font-alt;
+  @include flexer(row);
+  gap: 30px;
+  margin-top: 10vh;
+  flex-wrap: wrap;
+  @include Amobile {
+    @include flexer(column);
+  }
+  .card-image {
+    img {
+      width: 40vw;
+      box-shadow: -15px 15px 0 rgb(41, 41, 41);
+      @include Amobile {
+        width: 80vw;
+      }
+      @include Bmobile {
+        box-shadow: -10px 10px 0 rgb(41, 41, 41);
+      }
+    }
+  }
+  .content {
+    width: 40vw;
+    @include flexer(column);
+    align-items: flex-start;
+    gap: 15px;
+    @include Amobile {
+      width: 80vw;
+    }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      @include Bmobile {
+        font-size: 2rem;
+      }
+    }
+    p {
+      line-height: 2rem;
+      font-size: 1rem;
+      font-weight: 200;
+      @include Bmobile {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+      }
+    }
+    button {
+      @include button;
+      width: 100px;
+      border-radius: 1px;
+      color: white;
+      background: black;
+      margin-top: 10px;
+    }
+  }
+}
+
+// Testimonial Card
+
+.main-testimonial {
+  @include flexer(column);
+  background: bisque;
+  width: 95vw;
+  margin: auto;
+  font-family: $font-alt;
+  gap: 30px;
+  margin-bottom: 500px;
+  margin-top: 10vh;
+  padding: 50px 50px;
+  .content {
+    width: 100%;
+    @include flexer(column);
+    gap: 10px;
+    h2 {
+      font-weight: 500;
+      text-align: center;
+      font-size: 3rem;
+    }
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  .testimonial-cards {
+    @include flexer(row);
+    gap: 20px;
+    @include Zmobile {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.testimonial {
+  @include flexer(column);
+  font-family: $font-alt;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 2px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  .stars {
+    @include flexer(row);
+    gap: 3px;
+    span {
+      color: orange;
+    }
+  }
+  p {
+    line-height: 1rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 2rem;
+    @include SMmobile {
+      line-height: 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .person-image {
+    @include flexer(row);
+    gap: 15px;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .contents {
+      @include flexer(column);
+      justify-content: flex-start;
+      align-items: flex-start;
+      h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        @include SMmobile {
+          font-size: 1.2rem;
+        }
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgb(206, 30, 30);
+        @include SMmobile {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+// footer.jsx
+
+footer {
+  @include flexer(column);
+  border: 2px solid red;
+//   padding: 20px 40px;
+  gap: 20px;
+  font-family: $font-alt;
+  align-items: flex-start;
+
+  .links-footer {
+    @include flexer(row);
+    width: 100%;
+    flex-basis: 30%;
+    justify-content: space-evenly;
+
+    .footer-image {
+      width: 30vw;
+      gap: 20px;
+      img {
+        width: 60px;
+        height: 60px;
+        border: 2px solid green;
+      }
+      p {
+        line-height: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+    .links {
+      @include flexer(column);
+      gap: 7px;
+      font-size: 1rem;
+      font-weight: 800;
+      align-items: flex-start;
+
+      li {
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.2s;
+        list-style: none;
+      }
+      li:hover {
+        padding-bottom: 5px;
+      }
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .social-media {
+    @include flexer(row);
+    padding-left: 180px;
+    gap: 10px;
+
+    h2:hover {
+      color: gray;
+    }
+    a {
+      font-size: 1.5rem;
+    }
+    .portfolio{
+        font-size: 1rem;
+        display: block;
+       margin-bottom: 7px;
+    }
+  }
+}
