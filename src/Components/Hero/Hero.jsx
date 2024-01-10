@@ -4,7 +4,7 @@ import img from "../../images/background/b81s.png";
 const Hero = () => {
   return (
     <main>
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero-content">
           <h3>Beats Solo</h3>
           <h2>Wireless</h2>

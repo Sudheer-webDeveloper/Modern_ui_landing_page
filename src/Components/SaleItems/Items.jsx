@@ -5,7 +5,7 @@ import img from "../../images/data1.png";
 const Items = () => {
   return (
 
-    <section className="items">
+    <section className="items" id="products">
       <div className="item-image">
         <img src={img} alt="men with headsets" />
       </div>

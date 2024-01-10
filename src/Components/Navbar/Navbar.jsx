@@ -14,19 +14,19 @@ const Navbar = () => {
         <img src={logo1} alt="hello" />
         <ul className="app-links">
         <li>
-          <a href="#home"> Home</a>{" "}
+          <a href="#home">Home</a>{" "}
         </li>
         <li>
-          <a href="#about"> About</a>{" "}
+          <a href="#categories">Categories</a>{" "}
         </li>
         <li>
-          <a href="#menu"> Menu</a>{" "}
+          <a href="#products">Products</a>{" "}
         </li>
         <li>
-          <a href="#awards"> Awards</a>{" "}
+          <a href="#reviews">Reviews</a>{" "}
         </li>
         <li>
-          <a href="#contact"> Contact</a>{" "}
+          <a href="#contact">Contact</a>{" "}
         </li>
       </ul>
       </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="app-overlay">
             <div className="app-cross">
               <h6  onClick={() => setSmallScreen(false)} >
-                <IoRestaurant/>
+                  <span>X</span>
               </h6>
             </div>
             <ul className="app-small-screen-links">
@@ -58,13 +58,13 @@ const Navbar = () => {
                 <a href="#home"> Home</a>{" "}
               </li>
               <li>
-                <a href="#about"> About</a>{" "}
+                <a href="#categories"> Categories</a>{" "}
               </li>
               <li>
-                <a href="#menu"> Menu</a>{" "}
+                <a href="#products">Products</a>{" "}
               </li>
               <li>
-                <a href="#awards"> Awards</a>{" "}
+                <a href="#reviews">Reviews</a>{" "}
               </li>
               <li>
                 <a href="#contact"> Contact</a>{" "}

@@ -6,7 +6,7 @@ import img3 from '../../images/r-3.jpeg'
 
 const Index = () => {
   return (
-    <section className='main-testimonial'>
+    <section className='main-testimonial' id='reviews'>
       <div className="content">
            <h2>What Our Customers</h2>
            <h2>are Saying</h2>

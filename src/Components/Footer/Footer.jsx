@@ -6,7 +6,7 @@ import { RxResume } from "react-icons/rx";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="contact">
       <div className="links-footer">
         <div className="footer-image">
           <img src={logo1} alt="" />
@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <ul className="links">
           <li>
-            <a href="#home"> Home</a>{" "}
+            <a href="#home">Home</a>{" "}
           </li>
           <li>
             <a href="#categories"> Categoreis</a>{" "}
@@ -26,7 +26,7 @@ const Footer = () => {
             <a href="#products"> Products</a>{" "}
           </li>
           <li>
-            <a href="#awards"> Reviews</a>{" "}
+            <a href="#reviews"> Reviews</a>{" "}
           </li>
           <li>
             <a href="#contact"> Contact</a>{" "}

@@ -5,7 +5,7 @@ import { images, shipping } from "../Data/Data";
 
 const Products = () => {
   return (
-    <section className="products">
+    <section className="products" id="categories">
       <div className="flex-1">
         {images.slice(0, 3).map((item, index) => {
           return <img src={item} alt="Poster Image" key={index} />;

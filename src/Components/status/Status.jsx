@@ -22,7 +22,7 @@ const Status = () => {
       <div className="stat-1">
         <div className="content">
           <h2>1 Million +</h2>
-          <h3>Sales Through Out The World</h3>
+          <h3>Sales All Over The World</h3>
         </div>
       </div>
     </section>
